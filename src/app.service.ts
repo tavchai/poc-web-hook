@@ -11,8 +11,8 @@ export class AppService {
 
   async handleWebHook(data: any) {
     this.logger.debug(`handleWebHook >> ${JSON.stringify(data)}`);
-    const channelAccesToken = `rJy6lbM9+tfh/HhkVVdXZKbWw9vpN+94ih8Ue5ev1rCm7phnzFRq9E7nqJw6C62B9HU6K7xAqETo1LoQv5jemyDFPhK1XQ+tFYJexYl6GXsQ0LeDDi6q/NvrusEACVuGZfexLK5G/oYH7bfYlLCPLwdB04t89/1O/w1cDnyilFU=`;
-    const channelSecret = `6a855590095e6005a3b5cafb7f98bd76`;
+    const channelAccesToken = ``;
+    const channelSecret = ``;
 
     const event = data['events'][0];
     const eventType = event['type'];
