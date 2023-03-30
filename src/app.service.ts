@@ -6,7 +6,7 @@ export class AppService {
   private readonly logger = new Logger(AppService.name);
   constructor(private readonly httpService: HttpService) {}
   getHello() {
-    return { text: 'Hello jenkins' };
+    return { text: 'Hello jenkins..' };
   }
 
   async handleWebHook(data: any) {
