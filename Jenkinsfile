@@ -1,21 +1,26 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'building the application.'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing the application.'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application.'
-            }
-        }
+  agent any
+    
+  tools {nodejs "node"}
+    
+  stages {
+        
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/tavchai/poc-web-hook'
+      }
     }
+        
+    stage('Install dependencies') {
+      steps {
+        sh 'npm install'
+      }
+    }
+     
+    stage('Test') {
+      steps {
+         sh 'npm test'
+      }
+    }      
+  }
 }
