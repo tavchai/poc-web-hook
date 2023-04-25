@@ -7,7 +7,7 @@ pipeline {
         
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/tavchai/poc-web-hook.git'
+        git 'https://github.com/tavchai/poc-web-hook'
       }
     }
         
