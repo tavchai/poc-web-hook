@@ -7,7 +7,7 @@ pipeline {
         
     stage('Cloning Git') {
       steps {
-        git 'https://github.com/tavchai/poc-web-hook'
+        git branch: 'main', credentialsId: 'ee769ca6-370e-4a40-ae87-23f26eff3018', url: 'https://github.com/tavchai/poc-web-hook'
       }
     }
         
