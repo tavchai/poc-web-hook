@@ -10,6 +10,11 @@ export class AppController {
   getHello() {
     return this.appService.getHello();
   }
+  
+    @Get()
+  getHi() {
+    return 'Hi';
+  }
 
   @Post('/webhook')
   handle(@Body() payload) {
