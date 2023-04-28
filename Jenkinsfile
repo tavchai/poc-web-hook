@@ -1,3 +1,8 @@
+def COLOR_MAP = [
+  'SUCCESS': 'good',
+  'FAILURE': 'danger',
+]
+
 pipeline {
   agent any
     
@@ -16,6 +21,12 @@ pipeline {
         sh 'npm install'
       }
     }   
+
+    post{
+        always{
+            slackSend( channel: "#test-jenkins", color: COLOR_MAP[currentBuild.currentResult], message: "*${currentBuild.currentResult}* \n LOG -> http://localhost:8080/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/console")
+        }
+    }
     
   }
 }
