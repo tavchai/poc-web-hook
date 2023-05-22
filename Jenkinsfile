@@ -22,13 +22,13 @@ pipeline {
       }
     }   
 
-    stage('Build Docker image') {
-      steps {
-        script {
-          sh 'docker build -t tavchai/poc-web-hook .'
-        }
-      }
-    }
+    // stage('Build Docker image') {
+    //   steps {
+    //     script {
+    //       sh 'docker build -t tavchai/poc-web-hook .'
+    //     }
+    //   }
+    // }
     
   }
 
