@@ -21,6 +21,14 @@ pipeline {
         sh 'npm install'
       }
     }   
+
+    stage('Build Docker image') {
+      steps {
+        script {
+          sh 'docker build -t taweechai-dev/poc-web-hook .'
+        }
+      }
+    }
     
   }
 
